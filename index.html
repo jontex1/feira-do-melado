@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feira do Melado - Capanema/PR</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFD700;
+            color: #8B4513;
+        }
+        
+        header {
+            background-color: #FF4500;
+            color: white;
+            padding: 20px 0;
+            border-bottom: 5px solid #8B4513;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .prefeitura-logo {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+        
+        .melado-image {
+            max-width: 120px;
+            border-radius: 10px;
+            border: 3px solid #8B4513;
+        }
+        
+        .title-container {
+            text-align: center;
+            flex-grow: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .time-container {
+            background-color: #FF8C00;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5em;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .event-info {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2 {
+            color: #8B4513;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .gallery img {
+            width: calc(33.333% - 10px);
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background-color: #8B4513;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #FF4500;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #FF6347;
+        }
+
+        .map-container {
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #FF4500;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .map-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .prefeitura-logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .melado-image {
+                margin-top: 10px;
+            }
+            
+            .gallery img {
+                width: calc(50% - 10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bras%C3%A3o_de_Capanema.svg/1200px-Bras%C3%A3o_de_Capanema.svg.png" alt="Logo Prefeitura de Capanema" class="prefeitura-logo">
+            </div>
+            
+            <div class="title-container">
+                <h1>Feira do Melado - Capanema/PR</h1>
+                <p>Doce tradição desde 1987!</p>
+            </div>
+            
+            <div>
+                <img src="https://img.freepik.com/fotos-gratis/jarra-de-vidro-com-melado-e-colher-de-madeira_23-2148215303.jpg" alt="Melado" class="melado-image">
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="time-container">
+            <div id="current-date"></div>
+            <div id="current-time"></div>
+        </div>
+        
+        <div class="event-info">
+            <h2>Sobre o Evento</h2>
+            <p>A Feira do Melado de Capanema é um dos eventos mais tradicionais do sudoeste do Paraná, celebrando a cultura local e a produção de melado, um derivado da cana-de-açúcar que é a base de muitas receitas regionais.</p>
+            <p>O evento acontece anualmente no mês de julho e atrai milhares de visitantes de toda a região.</p>
+            
+            <h3>Atrações:</h3>
+            <ul>
+                <li>Exposição e venda de melado e derivados</li>
+                <li>Apresentações culturais</li>
+                <li>Comidas típicas</li>
+                <li>Shows musicais</li>
+                <li>Artesanato local</li>
+            </ul>
+            
+            <a href="#contact" class="cta-button">Mais Informações</a>
+        </div>
+        
+        <div class="event-info">
+            <h2>Galeria de Fotos</h2>
+            <div class="gallery">
+                <img src="https://placeholder.com/300x200" alt="Feira do Melado">
+                <img src="https://placeholder.com/300x200" alt="Produtos de melado">
+                <img src="https://placeholder.com/300x200" alt="Apresentações culturais">
+                <img src="https://placeholder.com/300x200" alt="Comidas típicas">
+                <img src="https://placeholder.com/300x200" alt="Artesanato">
+                <img src="https://placeholder.com/300x200" alt="Público na feira">
+            </div>
+        </div>
+        
+        <div class="event-info" id="contact">
+            <h2>Informações e Contato</h2>
+            <p><strong>Data:</strong> Julho de 2024 (datas específicas a confirmar)</p>
+            <p><strong>Local:</strong> Centro de Eventos de Capanema - PR</p>
+            <p><strong>Contato:</strong> Secretaria de Turismo - (46) 3542-XXXX</p>
+            <p><strong>E-mail:</strong> feiradomelado@capanema.pr.gov.br</p>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.324389714721!2d-53.7986339243376!3d-27.185345676514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94faf9e1ec1d9f17%3A0x5c5a9e5b0a8e4b0!2sCapanema%2C%20PR%2C%2085760-000!5e0!3m2!1spt-BR!2sbr!4v1718641234567!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <a href="https://earth.app.goo.gl/?apn=com.google.earth&isi=293622097&ius=googleearth&link=https%3a%2f%2fearth.google.com%2fweb%2f%40-25.66726009,-53.79645336,366.5167023a,0d,59.99572018y,99.37514886h,83.04436366t,0r%2fdata%3dCgRCAggBIhoKFldac19LNzZCR3FsM21DcXdsR0FTaWcQAjoDCgEwQgIIAEoNCP___________wEQAA" class="map-link" target="_blank">Ver no Google Earth</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Feira do Melado - Capanema/PR | Todos os direitos reservados</p>
+            <p>Desenvolvido pela Prefeitura Municipal de Capanema</p>
+        </div>
+    </footer>
+    
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            
+            // Formatar data
+            const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateStr = now.toLocaleDateString('pt-BR', optionsDate);
+            
+            // Formatar hora
+            const timeStr = now.toLocaleTimeString('pt-BR');
+            
+            // Atualizar elementos HTML
+            document.getElementById('current-date').textContent = dateStr;
+            document.getElementById('current-time').textContent = timeStr;
+        }
+        
+        // Atualizar a cada segundo
+        setInterval(updateDateTime, 1000);
+        
+        // Chamar imediatamente para evitar atraso inicial
+        updateDateTime();
+    </script>
+</body>
+</html> 
